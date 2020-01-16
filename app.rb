@@ -17,6 +17,7 @@ class App < Sinatra::Base
     end
 
     post "/webhook" do
+        puts 'chegou aki essa merda'
         request.body.rewind
         result = JSON.parse(request.body.read)["queryResult"]
         response = Translate::Trans.new(result["parameters"]).call()
