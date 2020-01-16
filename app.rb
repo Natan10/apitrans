@@ -2,7 +2,7 @@ require 'json'
 require 'sinatra'
 require 'http'
 
-require './app/services/*.rb'
+require './app/services/translate_service.rb'
 
 
 class App < Sinatra::Base
