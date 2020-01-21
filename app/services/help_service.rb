@@ -6,6 +6,7 @@ class HelpTrans
         response += "`list: listas as linguagens disponiveis para a tradução.`\n"
         response += "`pt-en,pt-es,pt-ja`\n\n"
         response += "** Tradução padrao pt-en ** "
+        response
     end
     
 end
