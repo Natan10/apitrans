@@ -20,7 +20,7 @@ class App < Sinatra::Base
         request.body.rewind
         result = JSON.parse(request.body.read)["queryResult"]
         if result["parameters"]['help'] == 'help'
-            response = HelpTrans.help()
+            response = HelpTrans.call()
         else
             response = Translate::Trans.new(result["parameters"]).call()
         end
