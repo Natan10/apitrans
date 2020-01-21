@@ -8,7 +8,8 @@ module Translate
 
         def call
             return "Digite uma Palavra válida" if @word == nil or @word == Integer
-            req = HTTP.post("https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{KEY}&text=#{@word}&lang=en-#{@lang}")
+            req = HTTP.post("https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{KEY}&text=#{@word}&lang=pt-#{@lang}")
+            puts JSON::parse(req.body)['text']
             if req.code == 200
                 result = JSON::parse(req.body)['text'][0]
             elsif req.code == 422

@@ -3,6 +3,7 @@ require 'sinatra'
 require 'http'
 
 require './app/services/translate_service.rb'
+require './app/services/help_service.rb'
 
 
 class App < Sinatra::Base
