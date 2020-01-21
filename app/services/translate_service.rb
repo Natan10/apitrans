@@ -3,11 +3,12 @@ module Translate
     class Trans
         def initialize(params)
           @word = params["word"]
+          @lang = params["lang"]
         end
 
         def call
             return "Digite uma Palavra válida" if @word == nil or @word == Integer
-            req = HTTP.post("https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{KEY}&text=#{@word}&lang=en-ja")
+            req = HTTP.post("https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{KEY}&text=#{@word}&lang=en-#{@lang}")
             if req.code == 200
                 result = JSON::parse(req.body)['text'][0]
             elsif req.code == 422
