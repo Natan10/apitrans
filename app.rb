@@ -32,7 +32,7 @@ class App < Sinatra::Base
             "payload": {
                 "telegram": {
                 "text": response,
-                "parse_mode": "Markdown"
+                "parse_mode": "markdown"
                 }
             }
         }.to_json
