@@ -19,7 +19,7 @@ class App < Sinatra::Base
     post "/webhook" do
         request.body.rewind
         result = JSON.parse(request.body.read)["queryResult"]
-        if result["action"] == 'help'
+        if result["parameters"]['help'] == 'help'
             response = HelpTrans.help()
         else
             response = Translate::Trans.new(result["parameters"]).call()
